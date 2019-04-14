@@ -18,7 +18,7 @@ $(document).ready(() => {
   // load the song data
   // This may fail (eg when you're running a local copy of the site and
   // accessing via file:// urls).
-  var jqXHR = $.getJSON(`res/${tournament}/data.json`, (data) => {
+  var jqXHR = $.getJSON(`tournaments/${tournament}/data.json`, (data) => {
     songs = data;
   })
 
@@ -101,7 +101,7 @@ $(document).ready(() => {
                 </div>
             </div>
       `);
-      img.children('.banner_image').css('background-image', `url("res/${tournament}/banners/${songObject.banner_filename}")`);
+      img.children('.banner_image').css('background-image', `url("tournaments/${tournament}/banners/${songObject.banner_filename}")`);
       if (songObject.subtitle === '') {
         img.find('.text_subtitle').remove();
       }
